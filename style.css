@@ -98,6 +98,7 @@ nav ul li a:hover {
 }
 
 .btn {
+  border-radius: 5px;
   display: inline-block;
   background: #0d3a6e;
   color: white;

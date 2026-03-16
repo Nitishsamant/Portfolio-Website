@@ -18,7 +18,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
+    </nav>  
   </header>
 
   <section id="home" class="hero">
@@ -56,9 +56,13 @@
     <div class ="skill">
       <span>C Lenguage </span>
       <div class="bar"><div class="progress" style="width: 90%"></div></div>
-  <div class="skill">
+    <div class="skill">
       <span>DSA</span>
       <div class="bar"><div class="progress" style="width: 80%"></div></div>
+    </div>
+    <div class="skill">
+      <span>MySql</span>
+      <div class="bar"><div class="progress" style="width: 60%"></div></div>
     </div>
   </section>
  
@@ -81,20 +85,23 @@
     <div class="project-card">
       <h3>Snake game</h3>
       <p>A classic snake game built with Python.</p>
-      
-
-
+    </div>
+    <div class="project-card">
+      <h3>Weather App</h3>
+      <p>A web app that fetches real-time weather data using an API.</p>
+    </div>
   </section>
 
   <section id="contact">
-    <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+  <h2>Contact Me</h2>
+  <form action="https://formspree.io/f/xreyybed" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="number" name="phone" placeholder="Your Phone" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
 
   <footer>
     <p>&copy; 2025 Nitish | All Rights Reserved</p>

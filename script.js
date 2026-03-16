@@ -34,3 +34,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+const express = require("express");
+const nodemailer = require("nodemailer");
+
+const app = express();
+app.use(express.json());
+
+app.post("/send", async (req, res) => {
+  const { name, email, message } = req.body;
+
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "Work.samant@gmail.com",
+      pass: "YOUR_APP_PASSWORD"
+    }
+  });
+
+  await transporter.sendMail({
+    from: email,
+    to: "Work.samant@gmail.com",
+    subject: "New Contact Form Message",
+    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+  });
+
+  res.send("Message sent!");
+});
+
+app.listen(3000);
