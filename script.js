@@ -8,7 +8,11 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+const toggle = document.getElementById("darkToggle");
 
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
 // Typing effect for hero text (optional enhancement)
 let i = 0;
 let text = "B.Tech CSE Student | Web Developer | Tech Enthusiast";
