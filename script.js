@@ -66,3 +66,32 @@ app.post("/send", async (req, res) => {
 });
 
 app.listen(3000);
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const formData = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value
+  };
+
+  try {
+    // Replace localhost with your production server URL when deployed
+    const response = await fetch('http://localhost:5000/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      alert('Message sent successfully!');
+      document.getElementById('contactForm').reset();
+    } else {
+      alert('Error: ' + result.error);
+    }
+  } catch (error) {
+    console.error('Submission error:', error);
+    alert('Something went wrong. Please try again.');
+  }
+});
